@@ -11,7 +11,7 @@ export async function POST(req) {
       const bytes = await value.arrayBuffer();
       const buffer = Buffer.from(bytes);
       const name = Date.now() + '-' + Math.random().toString(36).substring(7); // Ensure unique names
-      const path = `./public/uploads/${name}.jpg`;
+      const path = `./public/${name}.jpg`;
       
       const promise = writeFile(path, buffer);
       promises.push(promise);
